@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Model Cards with Image Slider</title>
+   <!--Bootstrap files-->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+  <!--main style sheet-->
+  <link href="assets/sass/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio.css">
+  <style>
+  
+    .grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .slider {
+      position: relative;
+      height: 350px;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 9s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    @keyframes slide {
+      0%, 30% { transform: translateX(0%); }
+      33.33%, 63.33% { transform: translateX(-100%); }
+      66.66%, 100% { transform: translateX(-200%); }
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #ccc;
+      border-radius: 50%;
+      animation: dotAnim 9s infinite;
+    }
+
+    .dot:nth-child(1) { animation-delay: 0s; }
+    .dot:nth-child(2) { animation-delay: 3s; }
+    .dot:nth-child(3) { animation-delay: 6s; }
+
+    @keyframes dotAnim {
+      0%, 10% {
+        background: #007bff;
+      }
+      30%, 100% {
+        background: #ccc;
+      }
+    }
+
+    .info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .info h3 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .info p {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .actions {
+      position: relative;
+      margin-left: -50px;
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      width: 300px;
+
+      /* padding: 0 15px 15px; */
+    }
+
+    .btn {
+      background: #000;
+      color: #fff;
+      /* padding: 8px 16px; */
+      border-radius: 6px;
+      text-decoration: none;
+/*       
+      display: flex;
+      align-items: center; */
+      gap: 6px;
+    }
+
+    .btn:hover {
+      background: #333;
+    }
+
+    /* .btn i {
+      font-size: 16px;
+    } */
+  </style>
+
+  <!-- Optional icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!--nav-->
+    <!--start nav-->
+  <nav class="navbar navbar-expand-xl border-bottom py-3">
+    <div class="container px-3">
+      <a class="navbar-brand d-none d-xl-flex" href="index.html">
+        <img src="assets/images/black.jpg" class="logo-img" alt="">
+      </a>
+      <button type="button" class="d-xl-none btn-menu-close" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+          <img src="assets/images/gallery/logo.png" class="logo-img2" alt="">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="nav-search p-3 pt-0 border-bottom d-flex d-xl-none">
+          <form class="position-relative w-100">
+            <input type="text" class="form-control nav-search-control ps-5 border-0 py-2" placeholder="what are you looking for ?">
+            <span class="position-absolute top-50 start-0 translate-middle-y"><i class="bi bi-search fs-6 ms-3"></i></span>
+        </form>
+</div>
+<div class="offcanvas-body p-1">
+  <ul class="navbar-nav mx-auto gap-4">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <span class="parent-menu-name">Home</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/portfolio.html">
+        <span class="parent-menu-name">Protfolio</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Hire model .html">
+        <span class="parent-menu-name">Hire Model</span>
+      </a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link" href="#">
+        <span class="parent-menu-name">Service</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/shop-grid-offcanvas-filter.html">
+        <span class="parent-menu-name">Hire Makeup Artist</span>
+      </a>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/blog-grid.html">
+        <span class="parent-menu-name">Blog</span>
+      </a>
+    </li>
+     <!-- <li class="nav-item">
+      <a class="nav-link" href="/about-us.html">
+        <span class="parent-menu-name">About</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/contact-us.html">
+        <span class="parent-menu-name">Contact</span>
+      </a>
+    </li> -->
+  </ul>
+</div>
+
+
+
+          </ul>
+        </div>
+        <div class="navbar-icons">
+  <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+    <img src="assets/images/instagram_4922972.png" alt="Instagram Icon" />
+  </a>
+  <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+    <img src="assets/images/facebook_126724.png" alt="Facebook Icon" />
+  </a>
+  <a href="https://maps.google.com" target="_blank" aria-label="Location">
+    <img src="assets/images/placeholder_819865.png" alt="Location Icon" />
+  </a>
+  </div>
+      </div>
+      
+  </nav>
+  
+ 
+  
+
+
+
+
+  <div class="grid p-5">
+
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="slider">
+        <div class="slides">
+          <img src="https://source.unsplash.com/random/300x350?sig=101" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=102" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=103" alt="">
+        </div>
+        <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="info">
+        <h3>Riyana</h3>
+        <p>Chennai, India</p>
+        <div class="actions">
+          <a href="#" class="btn"><i class="fab fa-instagram"></i> View Profile</a>
+          <a href="#" class="btn">Book Model</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="slider">
+        <div class="slides">
+          <img src="https://source.unsplash.com/random/300x350?sig=201" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=202" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=203" alt="">
+        </div>
+        <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="info">
+        <h3>Manasa</h3>
+        <p>Bengaluru, India</p>
+        <div class="actions">
+          <a href="#" class="btn"><i class="fab fa-instagram"></i> View Profile</a>
+          <a href="#" class="btn">Book Model</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="slider">
+        <div class="slides">
+          <img src="https://source.unsplash.com/random/300x350?sig=301" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=302" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=303" alt="">
+        </div>
+        <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="info">
+        <h3>Priya</h3>
+        <p>Bengaluru, India</p>
+        <div class="actions">
+          <a href="#" class="btn"><i class="fab fa-instagram"></i> View Profile</a>
+          <a href="#" class="btn">Book Model</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <div class="slider">
+        <div class="slides">
+          <img src="https://source.unsplash.com/random/300x350?sig=401" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=402" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=403" alt="">
+        </div>
+        <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="info">
+        <h3>Nikitha</h3>
+        <p>Bengaluru, India</p>
+        <div class="actions">
+          <a href="#" class="btn"><i class="fab fa-instagram"></i> View Profile</a>
+          <a href="#" class="btn">Book Model</a>
+        </div>
+      </div>
+    </div>
+
+       <div class="card">
+      <div class="slider">
+        <div class="slides">
+          <img src="https://source.unsplash.com/random/300x350?sig=401" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=402" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=403" alt="">
+        </div>
+        <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="info">
+        <h3>Nikitha</h3>
+        <p>Bengaluru, India</p>
+        <div class="actions">
+          <a href="#" class="btn"><i class="fab fa-instagram"></i> View Profile</a>
+          <a href="#" class="btn">Book Model</a>
+        </div>
+      </div>
+    </div>
+
+       <div class="card">
+      <div class="slider">
+        <div class="slides">
+          <img src="https://source.unsplash.com/random/300x350?sig=401" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=402" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=403" alt="">
+        </div>
+        <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="info">
+        <h3>Nikitha</h3>
+        <p>Bengaluru, India</p>
+        <div class="actions">
+          <a href="#" class="btn"><i class="fab fa-instagram"></i> View Profile</a>
+          <a href="#" class="btn">Book Model</a>
+        </div>
+      </div>
+    </div>
+
+       <div class="card">
+      <div class="slider">
+        <div class="slides">
+          <img src="https://source.unsplash.com/random/300x350?sig=401" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=402" alt="">
+          <img src="https://source.unsplash.com/random/300x350?sig=403" alt="">
+        </div>
+        <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="info">
+        <h3>Nikitha</h3>
+        <p>Bengaluru, India</p>
+        <div class="actions">
+          <a href="#" class="btn"><i class="fab fa-instagram"></i> View Profile</a>
+          <a href="#" class="btn">Book Model</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+     <!--footer widgets-->
+   <section class="footer-widgets py-5 border-top">
+      <div class="container px-3">
+        <div class="row g-4">
+           <div class="col-12 col-lg-4">
+               <div class="footer-widget-1">
+                  <div class="">
+                    <img src="assets/images/black.jpg" width="160" alt="">
+                  </div>
+                  
+                  <p><span><i class="bi bi-envelope me-2"></i></span>support@fotonyx.in</p>
+                  <p><span><i class="bi bi-telephone me-2"></i></span>9944200250</p>
+                  <div class="social-link d-flex align-items-center gap-2">
+                    <a href="javascript:;" class="btn btn-outline-dark"><i class="bi bi-facebook"></i></a>
+                    <a href="javascript:;" class="btn btn-outline-dark"><i class="bi bi-instagram"></i></a>
+                    <a href="javascript:;" class="btn btn-outline-dark"><i class="bi bi-youtube"></i></a>
+                  </div>
+               </div>
+           </div>
+           <div class="col-12 col-lg-3">
+              <div class="d-flex align-items-start justify-content-between gap-4">
+                <div class="">
+                  <h5 class="mb-3">Quick Link</h5>
+                  <ul class="list-unstyled d-flex flex-column gap-2">
+                      <li><a href="shop-circular-catgories.html" class="footer-link">Home</a></li>
+                      <li><a href="shop-list-left-sidebar.html" class="footer-link">Hire models</a></li>
+                      <li><a href="shop-grid-offcanvas-filter.html" class="footer-link">Hire Makeup Artist </a></li>
+                      <li><a href="shop-list-right-sidebar.html" class="footer-link">services</a></li>
+                      <li><a href="shop-list-ofcanvas-filter.html" class="footer-link">Blog</a></li>
+                      <li><a href="shop-grid-left-sidebar.html" class="footer-link">About Us</a></li>
+                      <li><a href="shop-grid-left-sidebar.html" class="footer-link">Contact</a></li>
+                  </ul>
+                 </div>
+                  <div class="footer-widget-3">
+                    <h5 class="mb-3">Quick link</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                       <li><a href="checkout.html" class="footer-link">Order tracking</a></li>
+                       <li><a href="javascript:;" class="footer-link">Shipping policy</a></li>
+                       <li><a href="account-my-profile.html" class="footer-link">Your account</a></li>
+                       <li><a href="account-addresses.html" class="footer-link">Delivery info</a></li>
+                       <li><a href="javascript:;" class="footer-link">Taxes & fees</a></li>
+                       <li><a href="javascript:;" class="footer-link">Refunds policy</a></li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1">
+              <div class="footer-widget-4">
+                <h5 class="mb-3">Newletter</h5>
+                <p class="news-letter-caption">Subscribe to our newsletter and enjoy 10% off your first order</p>
+				 <form method="post">
+					<div class="input-group input-group-lg mt-3">
+					  <input type="email" class="form-control border-dark" placeholder="Enter your email" required>
+					  <button class="btn btn-dark" type="submit"><i class="bi bi-arrow-up-right"></i></button>
+					</div>
+ <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919944200250" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <img src="assets/images/whatsapp_15015928.png" alt="WhatsApp Icon" />
+</a>
+
+  </section>
+  <!--end footer widgets-->
+
+
+  <!--start footer strip-->
+  <footer class="footer-strip py-4 border-top">
+      <div class="container px-3">
+        <div class="row g-4">
+          <div class="col-12 col-lg-auto">
+            <p class="mb-0 font-12">@All rights reserved. Made by Codervent</p>
+          </div>
+          <div class="col-12 col-lg-auto">
+            <div class="d-flex align-items-center gap-3">
+              <a href="policy.html" class="font-12 text-secondary">Privacy</a>
+              <!-- <a href="javascript:;" class="font-12 text-secondary">Affiliates</a> -->
+              <a href="terms.html" class="font-12 text-secondary">Terms of use</a>
+            </div>
+       
+       </div><!--end row-->
+      </div>
+  </footer>
+ <!--end footer strip-->
+
+</body>
+</html>

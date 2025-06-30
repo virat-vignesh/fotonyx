@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">      
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FOTONYX – We provide the best models for your brand </title>
+  <!--favicon-->
+	<link rel="icon" href="assets/images/favicon.png" type="image/png">
+  <!--font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+
+  <!--Plugins-->
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!--Bootstrap files-->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+  <!--main style sheet-->
+  <link href="assets/sass/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  
+    <!--start nav-->
+  <nav class="navbar navbar-expand-xl border-bottom py-3">
+    <div class="container px-3">
+      <a class="navbar-brand d-none d-xl-flex" href="index.html">
+        <img src="assets/images/black.jpg" class="logo-img" alt="">
+      </a>
+      <button type="button" class="d-xl-none btn-menu-close" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+          <img src="assets/images/gallery/logo.png" class="logo-img2" alt="">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="nav-search p-3 pt-0 border-bottom d-flex d-xl-none">
+          <form class="position-relative w-100">
+            <input type="text" class="form-control nav-search-control ps-5 border-0 py-2" placeholder="what are you looking for ?">
+            <span class="position-absolute top-50 start-0 translate-middle-y"><i class="bi bi-search fs-6 ms-3"></i></span>
+        </form>
+</div>
+<div class="offcanvas-body p-1">
+  <ul class="navbar-nav mx-auto gap-4">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <span class="parent-menu-name">Home</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/portfolio.html">
+        <span class="parent-menu-name">Protfolio</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Hire model .html">
+        <span class="parent-menu-name">Hire Model</span>
+      </a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link" href="/service.html">
+        <span class="parent-menu-name">Service</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/shop-grid-offcanvas-filter.html">
+        <span class="parent-menu-name">Hire Makeup Artist</span>
+      </a>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/blog-grid.html">
+        <span class="parent-menu-name">Blog</span>
+      </a>
+    </li>
+     <!-- <li class="nav-item">
+      <a class="nav-link" href="/about-us.html">
+        <span class="parent-menu-name">About</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/contact-us.html">
+        <span class="parent-menu-name">Contact</span>
+      </a>
+    </li> -->
+  </ul>
+</div>
+
+
+
+          </ul>
+        </div>
+        <div class="navbar-icons">
+  <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+    <img src="assets/images/instagram_4922972.png" alt="Instagram Icon" />
+  </a>
+  <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+    <img src="assets/images/facebook_126724.png" alt="Facebook Icon" />
+  </a>
+  <a href="https://maps.google.com" target="_blank" aria-label="Location">
+    <img src="assets/images/placeholder_819865.png" alt="Location Icon" />
+  </a>
+  </div>
+      </div>
+      
+  </nav>
+  <!--end nav-->
+
+
+  <!--start main content-->
+  <main class="main-content">
+
+    <!--start breadcrumb-->
+    <section class="section-breadcrumb bg-img-page-header d-flex align-items-center justify-content-center">
+      <div class="container px-3 d-flex flex-column align-items-center justify-content-center">
+        <h2>My Wishlist 2</h2>
+        <nav>
+          <ol class="breadcrumb mb-0 gap-2">
+            <li class="breadcrumb-item"><a href="javascript:;" class="breadcrumb-link">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i></li>
+            <li class="breadcrumb-item breadcrumb-active">Wishlist 2</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+    <!--end breadcrumb-->
+   <form id="hireModelForm" style="max-width: 500px; margin: 40px auto;">
+  <h2>Hire Model Form</h2>
+
+  <!-- Model Photo -->
+  <div style="text-align:center; margin-bottom: 20px;">
+    <img id="modelPhoto" src="" alt="Model Photo" style="max-width: 200px; border-radius: 10px;" />
+  </div>
+
+  <label for="modelName">Model Name</label>
+  <input type="text"  id="modelName" readonly required />
+
+  <label for="instagramId">Instagram ID</label>
+  <input type="text" id="instagramId" name="instagramId" readonly required />
+
+  <label for="userName">Your Name</label>
+  <input type="text" id="userName" name="userName" required placeholder="Your full name" />
+
+  <label for="mobile">Mobile Number</label>
+  <input type="tel" id="mobile" name="mobile" required pattern="[6-9]{1}[0-9]{9}" maxlength="10" placeholder="10-digit Indian number" />
+
+  <label for="email">Email Address</label>
+  <input type="email" id="email" name="email" required placeholder="example@email.com" />
+
+  <label for="purpose">Purpose of Shoot</label>
+  <textarea id="purpose" name="purpose" required placeholder="e.g., Bridal, Commercial, Fashion Shoot"></textarea>
+
+  <label for="date">Preferred Shoot Date</label>
+  <input type="date" id="date" name="date" required />
+
+  <button type="submit">Submit</button>
+</form>
+
+    <!--end shop-->
+
+  </main>
+  <!--end main content-->
+
+
+   <!--footer widgets-->
+   <section class="footer-widgets py-5 border-top">
+      <div class="container px-3">
+        <div class="row g-4">
+           <div class="col-12 col-lg-4">
+               <div class="footer-widget-1">
+                  <div class="">
+                    <img src="assets/images/black.jpg" width="160" alt="">
+                  </div>
+                  
+                  <p><span><i class="bi bi-envelope me-2"></i></span>support@fotonyx.in</p>
+                  <p><span><i class="bi bi-telephone me-2"></i></span>9944200250</p>
+                  <div class="social-link d-flex align-items-center gap-2">
+                    <a href="javascript:;" class="btn btn-outline-dark"><i class="bi bi-facebook"></i></a>
+                    <a href="javascript:;" class="btn btn-outline-dark"><i class="bi bi-instagram"></i></a>
+                    <a href="javascript:;" class="btn btn-outline-dark"><i class="bi bi-youtube"></i></a>
+                  </div>
+               </div>
+           </div>
+           <div class="col-12 col-lg-3">
+              <div class="d-flex align-items-start justify-content-between gap-4">
+                <div class="">
+                  <h5 class="mb-3">Quick Link</h5>
+                  <ul class="list-unstyled d-flex flex-column gap-2">
+                      <li><a href="shop-circular-catgories.html" class="footer-link">Home</a></li>
+                      <li><a href="shop-list-left-sidebar.html" class="footer-link">Hire models</a></li>
+                      <li><a href="shop-grid-offcanvas-filter.html" class="footer-link">Hire Makeup Artist </a></li>
+                      <li><a href="shop-list-right-sidebar.html" class="footer-link">services</a></li>
+                      <li><a href="shop-list-ofcanvas-filter.html" class="footer-link">Blog</a></li>
+                      <li><a href="shop-grid-left-sidebar.html" class="footer-link">About Us</a></li>
+                      <li><a href="shop-grid-left-sidebar.html" class="footer-link">Contact</a></li>
+                  </ul>
+                 </div>
+                  <div class="footer-widget-3">
+                    <h5 class="mb-3">Quick link</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                       <li><a href="checkout.html" class="footer-link">Order tracking</a></li>
+                       <li><a href="javascript:;" class="footer-link">Shipping policy</a></li>
+                       <li><a href="account-my-profile.html" class="footer-link">Your account</a></li>
+                       <li><a href="account-addresses.html" class="footer-link">Delivery info</a></li>
+                       <li><a href="javascript:;" class="footer-link">Taxes & fees</a></li>
+                       <li><a href="javascript:;" class="footer-link">Refunds policy</a></li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1">
+              <div class="footer-widget-4">
+                <h5 class="mb-3">Newletter</h5>
+                <p class="news-letter-caption">Subscribe to our newsletter and enjoy 10% off your first order</p>
+				 <form method="post">
+					<div class="input-group input-group-lg mt-3">
+					  <input type="email" class="form-control border-dark" placeholder="Enter your email" required>
+					  <button class="btn btn-dark" type="submit"><i class="bi bi-arrow-up-right"></i></button>
+					</div>
+ <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919944200250" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <img src="assets/images/whatsapp_15015928.png" alt="WhatsApp Icon" />
+</a>
+
+  </section>
+  <!--end footer widgets-->
+
+
+  <!--start footer strip-->
+  <footer class="footer-strip py-4 border-top">
+      <div class="container px-3">
+        <div class="row g-4">
+          <div class="col-12 col-lg-auto">
+            <p class="mb-0 font-12">@All rights reserved. Made by Codervent</p>
+          </div>
+          <div class="col-12 col-lg-auto">
+            <div class="d-flex align-items-center gap-3">
+              <a href="policy.html" class="font-12 text-secondary">Privacy</a>
+              <!-- <a href="javascript:;" class="font-12 text-secondary">Affiliates</a> -->
+              <a href="terms.html" class="font-12 text-secondary">Terms of use</a>
+            </div>
+       
+       </div><!--end row-->
+      </div>
+  </footer>
+ <!--end footer strip-->
+
+
+  <!--back to top button-->
+  <a href="javaScript:;" class="back-to-top"><i class="bi bi-arrow-up"></i></a>
+  <!--end back to top button-->
+
+
+    <script>
+    // Get URL parameters
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    const insta = params.get("insta");
+    const photo = params.get("photo");
+
+    // Fill the form
+    if (name && insta && photo) {
+      document.getElementById("modelName").value = name;
+      document.getElementById("instagramId").value = insta;
+      document.getElementById("modelPhoto").src = photo;
+    }
+  </script>
+
+
+  
+
+  <!-- JS file -->
+  <!-- <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script> -->
+
+
+  <!-- <script>
+  function fillHireForm(name, insta, photo) {
+    document.getElementById('modelName').value = name;
+    document.getElementById('instagramId').value = insta;
+    document.getElementById('modelPhoto').src = photo;
+
+    
+    document.getElementById('hireModelForm').scrollIntoView({ behavior: 'smooth' });
+  }
+  </script> -->
+
+
+
+
+  <!-- Swiper JS -->
+  <!-- <script src="assets/plugins/swiper/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/search-slider.js"></script>
+  <script src="assets/js/main.js"></script> -->
+</body>
+
+</html>

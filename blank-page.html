@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Galleries</title>
+  
+  <!--Bootstrap files-->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+  <!--main style sheet-->
+  <link href="assets/sass/style.css" rel="stylesheet">
+  <style>
+    /* * {
+      box-sizing: border-box;
+    } */
+
+    /* body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f2f2f2;
+    } */
+
+    .button-group {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .button-group button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      border: none;
+      background: #333;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .button-group button.active {
+      background: #ff4d4d;
+    }
+
+    .gallery {
+      display: none;
+      gap: 15px;
+    }
+
+    .gallery.active {
+      display: grid;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+
+
+   <!--start nav-->
+  <nav class="navbar navbar-expand-xl border-bottom py-3">
+    <div class="container px-3">
+      <a class="navbar-brand d-none d-xl-flex" href="index.html">
+        <img src="assets/images/black.jpg" class="logo-img" alt="">
+      </a>
+      <button type="button" class="d-xl-none btn-menu-close" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+          <img src="assets/images/gallery/logo.png" class="logo-img2" alt="">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="nav-search p-3 pt-0 border-bottom d-flex d-xl-none">
+          <form class="position-relative w-100">
+            <input type="text" class="form-control nav-search-control ps-5 border-0 py-2" placeholder="what are you looking for ?">
+            <span class="position-absolute top-50 start-0 translate-middle-y"><i class="bi bi-search fs-6 ms-3"></i></span>
+        </form>
+</div>
+<div class="offcanvas-body p-1">
+  <ul class="navbar-nav mx-auto gap-4">
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <span class="parent-menu-name">Home</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/portfolio.html">
+        <span class="parent-menu-name">Protfolio</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Hire model .html">
+        <span class="parent-menu-name">Hire Model</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/shop-grid-offcanvas-filter.html">
+        <span class="parent-menu-name">Hire Makeup Artist</span>
+      </a>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/blog-grid.html">
+        <span class="parent-menu-name">Blog</span>
+      </a>
+    </li>
+     <!-- <li class="nav-item">
+      <a class="nav-link" href="/about-us.html">
+        <span class="parent-menu-name">About</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/contact-us.html">
+        <span class="parent-menu-name">Contact</span>
+      </a>
+    </li> -->
+  </ul>
+</div>
+
+
+
+          </ul>
+        </div>
+        <div class="navbar-icons">
+  <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+    <img src="assets/images/instagram_4922972.png" alt="Instagram Icon" />
+  </a>
+  <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+    <img src="assets/images/facebook_126724.png" alt="Facebook Icon" />
+  </a>
+  <a href="https://maps.google.com" target="_blank" aria-label="Location">
+    <img src="assets/images/placeholder_819865.png" alt="Location Icon" />
+  </a>
+  </div>
+      </div>
+      
+  </nav>
+
+
+
+  <div class="button-group">
+    <button class="tab-button active" onclick="showGallery('wedding', this)">Wedding</button>
+    <button class="tab-button" onclick="showGallery('fashion', this)">Fashion</button>
+    <button class="tab-button" onclick="showGallery('nature', this)">Nature</button>
+    <button class="tab-button" onclick="showGallery('travel', this)">Travel</button>
+    <button class="tab-button" onclick="showGallery('food', this)">Food</button>
+    <button class="tab-button" onclick="showGallery('animals', this)">Animals</button>
+    <button class="tab-button" onclick="showGallery('all', this)">All Gallery</button>
+  </div>
+
+  <div id="wedding" class="gallery active w-100">
+    <div class="row d-flex justify-content-between">
+         <div class="col-3">
+          <img src="/assets/images/Models/Devika/IMG-20250429-WA0093.jpg" alt="Wedding 2" />
+        </div>
+        <div class="col-3">
+          <img src="/assets/images/Models/Devika/IMG-20250429-WA0093.jpg" alt="Wedding 2" />
+        </div>
+         <div class="col-3">
+          <img src="/assets/images/Models/Devika/IMG-20250429-WA0093.jpg" alt="Wedding 2" />
+        </div>
+      
+    </div>
+  </div>
+
+  <div id="fashion" class="gallery">
+    <img src="https://via.placeholder.com/400x300?text=Fashion+1" alt="Fashion 1" />
+    <img src="https://via.placeholder.com/400x300?text=Fashion+2" alt="Fashion 2" />
+  </div>
+
+  <div id="nature" class="gallery">
+    <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature 1" />
+    <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature 2" />
+  </div>
+
+  <div id="travel" class="gallery">
+    <img src="https://via.placeholder.com/400x300?text=Travel+1" alt="Travel 1" />
+    <img src="https://via.placeholder.com/400x300?text=Travel+2" alt="Travel 2" />
+  </div>
+
+  <div id="food" class="gallery">
+    <img src="https://via.placeholder.com/400x300?text=Food+1" alt="Food 1" />
+    <img src="https://via.placeholder.com/400x300?text=Food+2" alt="Food 2" />
+  </div>
+
+  <div id="animals" class="gallery">
+    <img src="https://via.placeholder.com/400x300?text=Animal+1" alt="Animal 1" />
+    <img src="https://via.placeholder.com/400x300?text=Animal+2" alt="Animal 2" />
+  </div>
+
+  <div id="all" class="gallery">
+    <!-- Wedding -->
+    <img src="/assets/images/Models/Devika/IMG-20250429-WA0093.jpg" alt="Wedding 1" />
+    <img src="https://via.placeholder.com/400x300?text=Wedding+2" alt="Wedding 2" />
+    <!-- Fashion -->
+    <img src="https://via.placeholder.com/400x300?text=Fashion+1" alt="Fashion 1" />
+    <img src="https://via.placeholder.com/400x300?text=Fashion+2" alt="Fashion 2" />
+    <!-- Nature -->
+    <img src="https://via.placeholder.com/400x300?text=Nature+1" alt="Nature 1" />
+    <img src="https://via.placeholder.com/400x300?text=Nature+2" alt="Nature 2" />
+    <!-- Travel -->
+    <img src="https://via.placeholder.com/400x300?text=Travel+1" alt="Travel 1" />
+    <img src="https://via.placeholder.com/400x300?text=Travel+2" alt="Travel 2" />
+    <!-- Food -->
+    <img src="https://via.placeholder.com/400x300?text=Food+1" alt="Food 1" />
+    <img src="https://via.placeholder.com/400x300?text=Food+2" alt="Food 2" />
+    <!-- Animals -->
+    <img src="https://via.placeholder.com/400x300?text=Animal+1" alt="Animal 1" />
+    <img src="https://via.placeholder.com/400x300?text=Animal+2" alt="Animal 2" />
+  </div>
+
+
+     <!--footer widgets-->
+   <section class="footer-widgets py-5 border-top">
+      <div class="container px-3">
+        <div class="row g-4">
+           <div class="col-12 col-lg-4">
+               <div class="footer-widget-1">
+                  <div class="">
+                    <img src="assets/images/black.jpg" width="160" alt="">
+                  </div>
+                  
+                  <p><span><i class="bi bi-envelope me-2"></i></span>support@fotonyx.in</p>
+                  <p><span><i class="bi bi-telephone me-2"></i></span>9944200250</p>
+                  <div class="social-link d-flex align-items-center gap-2">
+                    <a href="javascript:;" class="btn btn-outline-dark"><i class="bi bi-facebook"></i></a>
+                    <a href="javascript:;" class="btn btn-outline-dark"><i class="bi bi-instagram"></i></a>
+                    <a href="javascript:;" class="btn btn-outline-dark"><i class="bi bi-youtube"></i></a>
+                  </div>
+               </div>
+           </div>
+           <div class="col-12 col-lg-3">
+              <div class="d-flex align-items-start justify-content-between gap-4">
+                <div class="">
+                  <h5 class="mb-3">Quick Link</h5>
+                  <ul class="list-unstyled d-flex flex-column gap-2">
+                      <li><a href="shop-circular-catgories.html" class="footer-link">Home</a></li>
+                      <li><a href="shop-list-left-sidebar.html" class="footer-link">Hire models</a></li>
+                      <li><a href="shop-grid-offcanvas-filter.html" class="footer-link">Hire Makeup Artist </a></li>
+                      <li><a href="shop-list-right-sidebar.html" class="footer-link">services</a></li>
+                      <li><a href="shop-list-ofcanvas-filter.html" class="footer-link">Blog</a></li>
+                      <li><a href="shop-grid-left-sidebar.html" class="footer-link">About Us</a></li>
+                      <li><a href="shop-grid-left-sidebar.html" class="footer-link">Contact</a></li>
+                  </ul>
+                 </div>
+                  <div class="footer-widget-3">
+                    <h5 class="mb-3">Quick link</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                       <li><a href="checkout.html" class="footer-link">Order tracking</a></li>
+                       <li><a href="javascript:;" class="footer-link">Shipping policy</a></li>
+                       <li><a href="account-my-profile.html" class="footer-link">Your account</a></li>
+                       <li><a href="account-addresses.html" class="footer-link">Delivery info</a></li>
+                       <li><a href="javascript:;" class="footer-link">Taxes & fees</a></li>
+                       <li><a href="javascript:;" class="footer-link">Refunds policy</a></li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1">
+              <div class="footer-widget-4">
+                <h5 class="mb-3">Newletter</h5>
+                <p class="news-letter-caption">Subscribe to our newsletter and enjoy 10% off your first order</p>
+				 <form method="post">
+					<div class="input-group input-group-lg mt-3">
+					  <input type="email" class="form-control border-dark" placeholder="Enter your email" required>
+					  <button class="btn btn-dark" type="submit"><i class="bi bi-arrow-up-right"></i></button>
+					</div>
+ <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919944200250" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <img src="assets/images/whatsapp_15015928.png" alt="WhatsApp Icon" />
+</a>
+
+  </section>
+  <!--end footer widgets-->
+
+
+  <!--start footer strip-->
+  <footer class="footer-strip py-4 border-top">
+      <div class="container px-3">
+        <div class="row g-4">
+          <div class="col-12 col-lg-auto">
+            <p class="mb-0 font-12">@All rights reserved. Made by Codervent</p>
+          </div>
+          <div class="col-12 col-lg-auto">
+            <div class="d-flex align-items-center gap-3">
+              <a href="javascript:;" class="font-12 text-secondary">Privacy</a>
+              <a href="javascript:;" class="font-12 text-secondary">Affiliates</a>
+              <a href="javascript:;" class="font-12 text-secondary">Terms of use</a>
+            </div>
+       
+       </div><!--end row-->
+      </div>
+  </footer>
+ <!--end footer strip-->
+
+
+
+
+
+
+
+
+ <script>
+    function showGallery(galleryId, button) {
+      const galleries = document.querySelectorAll(".gallery");
+      const buttons = document.querySelectorAll(".tab-button");
+
+      galleries.forEach((g) => g.classList.remove("active"));
+      buttons.forEach((b) => b.classList.remove("active"));
+
+      document.getElementById(galleryId).classList.add("active");
+      button.classList.add("active");
+    }
+  </script>
+
+
+</body>
+</html>
